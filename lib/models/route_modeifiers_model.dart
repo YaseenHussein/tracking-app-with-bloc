@@ -1,0 +1,25 @@
+class RouteModifiersModel {
+  bool? avoidTolls;
+  bool? avoidHighways;
+  bool? avoidFerries;
+
+  RouteModifiersModel({
+    this.avoidTolls = false,
+    this.avoidHighways = false,
+    this.avoidFerries = false,
+  });
+
+  factory RouteModifiersModel.fromJson(Map<String, dynamic> json) {
+    return RouteModifiersModel(
+      avoidTolls: json['avoidTolls'] as bool?,
+      avoidHighways: json['avoidHighways'] as bool?,
+      avoidFerries: json['avoidFerries'] as bool?,
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+        'avoidTolls': avoidTolls,
+        'avoidHighways': avoidHighways,
+        'avoidFerries': avoidFerries,
+      };
+}
